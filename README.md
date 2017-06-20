@@ -1,8 +1,6 @@
-This project goes with the [ReactJS Crash Course](https://www.youtube.com/watch?v=A71aqufiNtQ) YouTube video
+## ReactJS Contact Form
 
-## ReactJS Project Manager
-
-Very simple project manager interface using React
+Very simple contat form interface using React
 
 ```sh
 $ npm install

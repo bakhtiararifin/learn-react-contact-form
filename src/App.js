@@ -39,9 +39,9 @@ class App extends Component {
     this.getContacts();
   }
 
-  handleAddContact(project){
+  handleAddContact(contact){
     let contacts = this.state.contacts;
-    contacts.push(project);
+    contacts.push(contact);
     this.setState({contacts:contacts});
   }
 
