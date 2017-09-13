@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import Contact from './Contact';
+import ContactContainer from './ContactContainer';
 
 class ContactList extends Component {
-  handleDelete(id){
-    this.props.onDelete(id);
-  }
-
   render() {
     let contactItems;
     if(this.props.contacts) {
       contactItems = this.props.contacts.map((contact, index) => {
         return (
-          <Contact onDelete={this.handleDelete.bind(this)} key={contact.id} number={index + 1} contact={contact} />
+          <ContactContainer key={contact.id} contact={contact} />
         );
       });
     }

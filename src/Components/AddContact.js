@@ -1,32 +1,22 @@
 import React, { Component } from 'react';
-import uuid from 'uuid';
 
 class AddContact extends Component {
-  constructor(){
-    super();
-    this.state = {
-      name:'',
-      email:'',
-      phone:''
-    }
+  state = {
+    name:'',
+    email:'',
+    phone:''
   }
 
-  changeName(e){
-    let newState = this.state
-    newState.name = e.target.value
-    this.setState(newState)
+  changeName(e) {
+    this.setState({...this.state, name: e.target.value})
   }
 
-  changeEmail(e){
-    let newState = this.state
-    newState.email = e.target.value
-    this.setState(newState)
+  changeEmail(e) {
+    this.setState({...this.state, email: e.target.value})
   }
 
-  changePhone(e){
-    let newState = this.state
-    newState.phone = e.target.value
-    this.setState(newState)
+  changePhone(e) {
+    this.setState({...this.state, phone: e.target.value})
   }
 
   handleSubmit(e){
@@ -38,14 +28,11 @@ class AddContact extends Component {
     } else if (this.state.phone === ''){
       alert('Phone is required');
     } else {
-      let newContact = {
-        id: uuid.v4(),
-        name: this.state.name,
-        email: this.state.email,
-        phone: this.state.phone
-      }
-
-      this.props.addContact(newContact);
+      this.props.addContact(
+        this.state.name,
+        this.state.email,
+        this.state.phone
+      );
 
       this.setState({
         name: '',
